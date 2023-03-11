@@ -48,11 +48,14 @@ class LinkedList:
             itr = itr.next
         print(liststr)
 if __name__ == '__main__':
-    ll = LinkedList()
-    ll.add_at_beginning(1)
-    ll.add_at_beginning(2)
-    ll.add_at_beginning(3)
-    ll.add_at_end(5)
-    ll.add_at_end(5)
-    ll.add_at_index(0, 10)
-    ll.print()
+
+    # example list:
+
+    #ll = LinkedList()
+    #ll.add_at_beginning(1)
+    #ll.add_at_beginning(2)
+    #ll.add_at_beginning(3)
+    #ll.add_at_end(5)
+    #ll.add_at_end(5)
+    #ll.add_at_index(0, 10)
+    #ll.print()
