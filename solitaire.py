@@ -56,8 +56,13 @@ class Board:
         else:
             print('not valid direction')
             return
-        print(target, origin)
+        
         # check legality of the move
+        # check whether move goes off the board
+        for ind in range(2):
+            if origin[ind] >= 7 or target[ind] >= 7:
+                print('gone off the board')
+                return 
         legal = self.check_move(self.data[target[1]][target[0]],self.data[middle[1]][middle[0]], self.data[origin[1]][origin[0]])
         if not legal[0]:
             print(legal)
@@ -90,10 +95,12 @@ class Game:
         b = Board()
         b.print()
         while playing:
-            x = int(input('enter x coord: '))
-            y = int(input('enter y coord: '))
+            x =input('enter x coord: ')
+            y = input('enter y coord: ')
             dir = input('enter direction {"n", "s", "e" or "w"}: ')
-            b.make_move(x,y, dir)
+            if (x.isdigit()) and (y.isdigit()):
+                b.make_move(int(x),int(y), dir)
+            else: print('enter valid number')
 
 
 
